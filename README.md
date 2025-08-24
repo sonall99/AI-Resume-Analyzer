@@ -204,11 +204,11 @@ Resume-Analyzer/
 ## 📝 Requirements
 
 ### Backend Dependencies
-- Flask/FastAPI for web framework
+- FastAPI for web framework
 - scikit-learn for machine learning
 - pandas and numpy for data processing
 - XGBoost for advanced ML models
-- OpenAI for AI suggestions
+- Gemini for AI suggestions
 - PyPDF2 for PDF processing
 - python-dotenv for environment variables
 
@@ -218,12 +218,6 @@ Resume-Analyzer/
 
 MIT License - feel free to use this project for learning and development!
 
-## 🙏 Credits
-
-- **OpenAI** for GPT API
-- **scikit-learn** for ML tools
-- **Tailwind CSS** for styling
-- **Flask/FastAPI** for backend framework
 
 ---
 
