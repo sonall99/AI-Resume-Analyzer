@@ -69,17 +69,42 @@ Visit `http://localhost:8080` to start analyzing resumes!
 ## 📁 Project Structure
 
 ```
-resume-analyzer/
-├── frontend/
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
-├── backend/
-│   ├── main.py
-│   ├── models/
-│   ├── requirements.txt
-│   └── utils/
-└── README.md
+Resume-Analyzer/
+│
+├── Backend/                     # Backend (API + ML Model)
+│   ├── Backend.py                # Main backend application (Flask/FastAPI)
+│   ├── Final.ipynb               # Model training & experiments notebook
+│   ├── final_model.joblib        # Trained ML model (XGBoost / Classifier)
+│   ├── final_vectorizer.joblib   # TF-IDF vectorizer
+│   ├── requirements.txt          # Backend dependencies
+│   └── __pycache__/              # Compiled python cache (ignored)
+│
+├── Frontend/                    # Frontend (React + Vite + Tailwind)
+│   ├── index.html                # Entry point
+│   ├── package.json              # Node dependencies
+│   ├── vite.config.ts            # Vite config
+│   ├── tailwind.config.js        # Tailwind config
+│   ├── src/                      # React source files
+│   │   ├── app.jsx               # Main app logic
+│   │   ├── main.jsx              # React DOM render
+│   │   ├── App.css               # App styles
+│   │   ├── index.css             # Global styles
+│   │   └── assets/               # Static assets (icons, images)
+│   └── public/                   # Public static files
+│
+├── Data/                        # Dataset & Model JSON
+│   ├── resume_job_matching_dataset.csv
+│   └── resume_model.json
+│
+├── Screenshots/                 # App demo screenshots
+│   ├── upload_resume.png
+│   ├── score_result.png
+│   ├── suggestions.png
+│   └── mobile_view.png
+│
+├── README.md                    # Project documentation
+└── .gitignore                   # Git ignore rules
+
 ```
 
 ## 🎯 How to Use
