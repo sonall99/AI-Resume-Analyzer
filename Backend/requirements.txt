@@ -5,3 +5,6 @@ google-generativeai
 scikit-learn
 joblib
 pypdf2
+xgboost==1.7.6
+python-multipart
+scikit-learn==1.6.1
