@@ -6,6 +6,7 @@ import google.generativeai as genai
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from sklearn.feature_extraction.text import TfidfVectorizer
 from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
 
 # -------------------------------------------------
 # Logging setup
@@ -18,7 +19,7 @@ app = FastAPI(title="Resume Scorer + Suggestion API")
 # Enable CORS for frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:5500"],  # frontend origin
+    allow_origins=["http://127.0.0.1:5500","https://ai-resume-analyze-rose.vercel.app/"],  # frontend origin
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -41,6 +42,7 @@ except Exception as e:
 
 # -------------------------------------------------
 # Gemini API config
+load_dotenv()
 api_key = os.getenv("GEMINI_API_KEY")
 if not api_key:
     raise ValueError("❌ GEMINI_API_KEY not found. Please set it in your environment variables.")
