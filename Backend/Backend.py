@@ -41,7 +41,11 @@ except Exception as e:
 
 # -------------------------------------------------
 # Gemini API config
-genai.configure(api_key=os.getenv("GEMINI_API_KEY", "AIzaSyA7wVFNP42PMGrDieQL-CHl4PdDSIHbgoE"))
+api_key = os.getenv("GEMINI_API_KEY")
+if not api_key:
+    raise ValueError("❌ GEMINI_API_KEY not found. Please set it in your environment variables.")
+
+genai.configure(api_key=api_key)
 
 # -------------------------------------------------
 # Helper: Extract text from PDF
