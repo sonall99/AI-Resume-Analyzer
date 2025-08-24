@@ -89,31 +89,6 @@ resume-analyzer/
 3. **Get** your score (0-100) and AI suggestions
 4. **Improve** your resume based on feedback
 
-## 📸 Screenshots & Demo
-
-### 🏠 **Main Interface**
-<div align="center">
-<img src="https://github.com/sonall99/AI-Resume-Analyzer/blob/main/Screenshot%202025-08-24%20194339.png" alt="Main Interface" width="800"/>
-<br><em>Clean, intuitive upload interface with drag-and-drop functionality</em>
-</div>
-
-### 📊 **Resume Analysis Results**
-<div align="center">
-<img src="https://github.com/sonall99/AI-Resume-Analyzer/blob/main/Screenshot%202025-08-24%20194434.png" alt="Analysis Results" width="800"/>
-<br><em>Comprehensive scoring system with detailed breakdown</em>
-</div>
-
-### 💡 **AI-Powered Suggestions**
-<div align="center">
-<img src="https://github.com/sonall99/AI-Resume-Analyzer/blob/main/Screenshot%202025-08-24%20194503.png" alt="AI Suggestions" width="800"/>
-<br><em>GPT-generated personalized recommendations for improvement</em>
-</div>
-
-### 🎯 **Success Dashboard**
-<div align="center">
-<img src="https://github.com/sonall99/AI-Resume-Analyzer/blob/main/Screenshot%202025-08-24%20195001.png" alt="Success Dashboard" width="800"/>
-<br><em>Track your progress and optimization results</em>
-</div>
 
 ### 🎬 **User Journey Flow**
 
