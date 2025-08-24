@@ -19,7 +19,7 @@ app = FastAPI(title="Resume Scorer + Suggestion API")
 # Enable CORS for frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:5500","https://ai-resume-analyze-rose.vercel.app/"],  # frontend origin
+    allow_origins=["http://127.0.0.1:5500","https://ai-resume-analyze-rose.vercel.app"],  # frontend origin
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
