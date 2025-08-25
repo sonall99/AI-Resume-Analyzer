@@ -17,7 +17,7 @@
 ## ✨ Features
 
 - 📊 **Resume Scoring** - ML-powered analysis with TF-IDF + XGBoost
-- 🤖 **AI Suggestions** - GPT-generated improvement tips
+- 🤖 **AI Suggestions** - Gemini-generated improvement tips
 - 📄 **PDF Upload** - Easy drag-and-drop interface
 - 📱 **Responsive Design** - Works on all devices
 - ⚡ **Fast Results** - Get insights in seconds
