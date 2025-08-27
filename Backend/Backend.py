@@ -87,7 +87,10 @@ def get_resume_suggestions(resume_text: str, job_description: str):
 
 # -------------------------------------------------
 # Endpoints
-
+@app.get("/ping")
+def ping():
+    return{"status":"ok"}
+    
 @app.post("/score/")
 async def score_resume(job_description: str = Form(...), resume_file: UploadFile = File(...)):
     if model is None or vectorizer is None:
