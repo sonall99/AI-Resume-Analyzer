@@ -13,6 +13,7 @@
 **📊 ANALYZE • 🎯 OPTIMIZE • 🚀 SUCCEED**
 
 </div>
+
 ## 🎬 **Live Demo**
 
 <div align="center">
@@ -22,7 +23,6 @@
 [![Demo](https://img.shields.io/badge/🚀%20LIVE%20DEMO-Try%20It%20Now!-success?style=for-the-badge&logo=rocket)](https://ai-resume-analyze-rose.vercel.app/)
 
 *Experience the power of AI-driven resume analysis*
-
 ## ✨ Features
 
 - 📊 **Resume Scoring** - ML-powered analysis with TF-IDF + XGBoost
