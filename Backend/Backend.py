@@ -2,7 +2,7 @@ import os
 import logging
 import joblib
 import PyPDF2
-import google.generativeai as genai
+from google import genai  
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from sklearn.feature_extraction.text import TfidfVectorizer
 from fastapi.middleware.cors import CORSMiddleware
@@ -19,7 +19,7 @@ app = FastAPI(title="Resume Scorer + Suggestion API")
 # Enable CORS for frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:5500","https://ai-resume-analyze-rose.vercel.app"],  # frontend origin
+    allow_origins=["http://127.0.0.1:5500", "https://ai-resume-analyze-rose.vercel.app"],  # frontend origin
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -47,7 +47,8 @@ api_key = os.getenv("GEMINI_API_KEY")
 if not api_key:
     raise ValueError("❌ GEMINI_API_KEY not found. Please set it in your environment variables.")
 
-genai.configure(api_key=api_key)
+# UPDATED: Initialize the new Client
+client = genai.Client(api_key=api_key)
 
 # -------------------------------------------------
 # Helper: Extract text from PDF
@@ -78,16 +79,20 @@ def get_resume_suggestions(resume_text: str, job_description: str):
     {job_description}
     """
     try:
-        model_llm = genai.GenerativeModel("gemini-2.0-flash")
-        response = model_llm.generate_content(prompt)
+        # UPDATED: Use the new client syntax and the stable Flash model
+        response = client.models.generate_content(
+            model="models/gemini-2.5-flash",
+            contents=prompt
+        )
         return response.text
     except Exception as e:
         logging.error(f"Gemini API failed: {e}")
-        return "❌ Could not generate suggestions. Please try again later."
+        # Return a friendly error so the frontend doesn't break
+        return "❌ Could not generate suggestions. (API Quota or Connection Error)"
 
 # -------------------------------------------------
 # Endpoints
-@app.api_route("/ping", methods=["GET", "HEAD"])
+@app.get("/ping")  
 async def ping():
     return {"message": "pong"}
     
@@ -110,3 +115,5 @@ async def get_ai_suggestions(job_description: str = Form(...), resume_file: Uplo
     resume_text = extract_text_from_pdf(resume_file)
     suggestions = get_resume_suggestions(resume_text, job_description)
     return {"suggestions": suggestions}
+
+
